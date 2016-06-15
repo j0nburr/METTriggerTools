@@ -1,0 +1,34 @@
+{
+  "type" : "ObjectCounter",
+  "objDefs" : [
+  {
+    "decorator" : "LooseLepton",
+    "electron" : {
+      "ID"  : "LooseAndBLayerLH",
+      "pt"  : 20,
+      "eta" : 2.47
+    },
+    "muon" : {
+      "ID"  : "Loose",
+      "pt"  : 20,
+      "eta" : 2.47
+    },
+    "jet" : {
+      "eta" : 2.8
+    }
+  }],
+  "electron" : {
+    "electron" : {
+      "value" : 1,
+      "operator" : ">="
+    },
+    "triggers" : ["HLT_e24_lhmedium_L1EM20VH"]
+  },
+  "muon" : {
+    "muon" : {
+      "value" : 1,
+      "operator" : ">="
+    },
+    "triggers" : ["HLT_mu24_imedium"]
+  }
+}

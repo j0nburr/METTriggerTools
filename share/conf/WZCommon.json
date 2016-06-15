@@ -1,0 +1,41 @@
+{
+  "type" : "WZCommon",
+  "objDefs" : [
+  {
+    "decorator" : "WZCommon",
+    "electron" : {
+      "ID"  : "MediumLH",
+      "pt"  : 25,
+      "eta" : 2.47,
+      "iso" : "Gradient"
+    },
+    "muon" : {
+      "ID"  : "Medium",
+      "pt"  : 25,
+      "eta" : 2.47,
+      "iso" : "Gradient"
+    }
+  }],
+  "Wenu" : {
+    "mT"  : 50,
+#"met" : 25,
+    "met" : 0,
+    "triggers" : ["HLT_e24_lhmedium_iloose_L1EM20VH", "HLT_e60_lhmedium"]
+  },
+  "Wmunu" : {
+    "mT"  : 50,
+#"met" : 25,
+    "met" : 0,
+    "triggers" : ["HLT_mu20_iloose_L1MU15", "HLT_mu50"]
+  },
+  "Zee" : {
+    "mllLow"  : 66,
+    "mllHigh" : 116,
+    "triggers" : ["HLT_e24_lhmedium_iloose_L1EM20VH", "HLT_e60_lhmedium"]
+  },
+  "Zmumu" : {
+    "mllLow"  : 66,
+    "mllHigh" : 116,
+    "triggers" : ["HLT_mu20_iloose_L1MU15", "HLT_mu50"]
+  }
+}

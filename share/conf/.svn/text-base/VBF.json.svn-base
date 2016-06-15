@@ -1,0 +1,36 @@
+{
+  "type" : "VBF",
+  "objDefs" : [
+  {
+    "decorator" : "VBF",
+    "electron" : {
+      "ID"  : "MediumLH",
+      "pt"  : 10,
+      "eta" : 2.47,
+      "iso" : "Gradient",
+      "d0sig" : 3.0,
+      "z0sintheta" : 0.4
+    },
+    "muon" : {
+      "ID"  : "Medium",
+      "pt"  : 25,
+      "eta" : 2.47,
+      "iso" : "Gradient",
+      "d0sig" : 3,
+      "z0sintheta" : 1.0
+    }
+  }],
+  "bJetTagger" : "MV2c20",
+  "bJetWP" : -0.0436,
+  "dijet" : {
+    "leadingJetPt" : 75,
+    "subLeadingJetPt" : 50,
+    "dijetMass" : 1000,
+    "dijetMinDEta" : 4.8,
+    "dijetMaxDPhi" : 2.5,
+    "metJetMinDPhi" : 1.0,
+#"met" : 150
+    "met" : 0,
+    "triggers" : ["HLT_2j40_0eta490_invm250_L1XE55"]
+  }
+}

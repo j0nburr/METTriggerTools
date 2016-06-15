@@ -1,0 +1,77 @@
+{
+  "type" : "ttbar",
+  "objDefs" : [
+  {
+    "decorator" : "ttbar",
+    "electron" : 
+    {
+      "ID"  : "MediumLH",
+      "pt"  : 25,
+      "eta" : 2.47,
+      "iso" : "Gradient"
+    },
+    "muon" : 
+    {
+      "ID"  : "Medium",
+      "pt"  : 25,
+      "eta" : 2.47,
+      "iso" : "Gradient"
+    },
+    "jet" : {
+      "pt"  : 25,
+      "eta" : 2.5
+    }
+  },
+  {
+    "decorator" : "ttbar:lj",
+    "electron" : 
+    {
+      "ID"  : "TightLH",
+      "pt"  : 25,
+      "eta" : 2.47,
+      "iso" : "Gradient"
+    },
+    "muon" : 
+    {
+      "ID"  : "Medium",
+      "pt"  : 25,
+      "eta" : 2.47,
+      "iso" : "Gradient"
+    },
+    "jet" : {
+      "pt"  : 25,
+      "eta" : 2.5
+    }
+  }],
+  "ljDecorator" : "ttbar:lj",
+  "bJetTagger"  : "MV2c20",
+  "bJetWP"      : -0.0436,
+  "ttbaree" : {
+    "mll"      : 60,
+    "ZmllLow"  : 81,
+    "ZmllHigh" : 101,
+#"met" : 30
+    "met"      : 0,
+    "triggers" : ["HLT_e24_lhmedium_iloose_L1EM20VH", "HLT_e60_lhmedium"] 
+  },
+  "ttbarmumu" : {
+    "mll"      : 60,
+    "ZmllLow"  : 81,
+    "ZmllHigh" : 101,
+#"met" : 30
+    "met"      : 0,
+    "triggers" : ["HLT_mu20_iloose_L1MU15", "HLT_mu50"]
+  },
+  "ttbarej" : {
+    "mT"       : 50,
+#"met" : 40
+    "met"      : 0,
+    "triggers" : ["HLT_e24_lhmedium_iloose_L1EM20VH", "HLT_e60_lhmedium"]
+  },
+  "ttbarmuj" : {
+    "mT"       : 60,
+#"met" : 40
+    "met"      : 0,
+    "triggers" : ["HLT_mu20_iloose_L1MU15", "HLT_mu50"]
+  }
+}

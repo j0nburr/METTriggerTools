@@ -1,0 +1,108 @@
+## automatically generated CMT requirements file
+package METTriggerTools
+author  burr
+
+## for athena policies: this has to be the first use statement
+use AtlasPolicy 	AtlasPolicy-*
+
+## for gaudi tools, services and objects
+use GaudiInterface 	GaudiInterface-* 	External
+
+
+use AsgTools AsgTools-* Control/AthToolSupport
+
+use AthContainers AthContainers-* Control
+
+#uncomment the next line to use ROOT libraries in your package
+use AtlasROOT AtlasROOT-* External
+
+#next line only needed for example code in asg tool...please remove if not using
+use xAODBase xAODBase-* Event/xAOD
+use xAODEgamma xAODEgamma-* Event/xAOD
+use xAODMuon xAODMuon-* Event/xAOD
+use xAODMissingET xAODMissingET-* Event/xAOD
+use xAODJet xAODJet-* Event/xAOD
+use xAODTau xAODTau-* Event/xAOD
+use xAODTracking xAODTracking-* Event/xAOD
+use xAODTrigger xAODTrigger-* Event/xAOD
+use xAODCore xAODCore-* Event/xAOD
+use xAODTrigMissingET xAODTrigMissingET-* Event/xAOD
+
+use AssociationUtils AssociationUtils-* PhysicsAnalysis/AnalysisCommon
+
+use PATCore PATCore-* PhysicsAnalysis/AnalysisCommon
+
+private
+## for gaudi tools, services and objects
+use GaudiInterface                        GaudiInterface-*                         External
+use AthenaBaseComps                       AthenaBaseComps-*                        Control
+use PathResolver                          PathResolver-*                           Tools
+
+## put here your package dependencies...
+
+## EDM dependencies
+# use xAODTrigger                           xAODTrigger-*                            Event/xAOD
+# use xAODTrigMissingET                     xAODTrigMissingET-*                      Event/xAOD
+# use xAODEventInfo                         xAODEventInfo-*                          Event/xAOD
+
+use xAODEventInfo xAODEventInfo-* Event/xAOD
+## Tools
+use JetCalibTools                         JetCalibTools-*                          Reconstruction/Jet
+use JetInterface                          JetInterface-*                           Reconstruction/Jet
+use ElectronPhotonSelectorTools           ElectronPhotonSelectorTools-*            PhysicsAnalysis/ElectronPhotonID
+use ElectronPhotonFourMomentumCorrection  ElectronPhotonFourMomentumCorrection-*   PhysicsAnalysis/ElectronPhotonID
+use TauAnalysisTools                      TauAnalysisTools-*                       PhysicsAnalysis/TauID
+use MuonSelectorTools                     MuonSelectorTools-*                      PhysicsAnalysis/MuonID
+use MuonMomentumCorrections               MuonMomentumCorrections-*                PhysicsAnalysis/MuonID/MuonIDAnalysis
+use IsolationSelection                    IsolationSelection-*                     PhysicsAnalysis/AnalysisCommon
+use METInterface                          METInterface-*                           Reconstruction/MET
+use TrigDecisionInterface                 TrigDecisionInterface-*                  Trigger/TrigEvent
+use TrigConfInterfaces                    TrigConfInterfaces-*                     Trigger/TrigConfiguration
+
+end_private
+
+
+
+branches src src/components doc python share
+
+## default is to make component library. See: https://twiki.cern.ch/twiki/bin/view/Main/LearningAthena#Libraries_in_CMT for alternatives
+library METTriggerTools *.cxx components/*.cxx ../Root/*.cxx ../Root/EventSelectors/*.cxx
+apply_pattern component_library
+
+apply_pattern declare_joboptions files="*.py"
+apply_pattern declare_python_modules files="*.py"
+apply_pattern declare_runtime files="conf/*.json"
+
+
+
+#Reflex Dictionary Generation:
+private
+use AtlasReflex AtlasReflex-* External
+apply_pattern lcgdict dict=METTriggerTools selectionfile=selection.xml headerfiles="../METTriggerTools/METTriggerToolsDict.h"
+end_private
+#test for METTriggerAnalysisTool ... compile and execute it with 'make check' 
+private
+use TestTools      TestTools-*         AtlasTest
+apply_pattern UnitTest_run unit_test=ut_METTriggerAnalysisTool
+macro_append ut_METTriggerAnalysisTool_test_dependencies " METTriggerTools METTriggerToolsMergeComponentsList "
+end_private
+#test for METTriggerEventSelector ... compile and execute it with 'make check' 
+private
+use TestTools      TestTools-*         AtlasTest
+
+use AthAnalysisBaseComps AthAnalysisBaseComps-* Control
+
+
+
+#uncomment the next line to use ROOT libraries in your package
+#use AtlasROOT AtlasROOT-* External
+
+apply_pattern UnitTest_run unit_test=ut_METTriggerEventSelector
+macro_append ut_METTriggerEventSelector_test_dependencies " METTriggerTools METTriggerToolsMergeComponentsList "
+end_private
+#test for METTriggerHelper ... compile and execute it with 'make check' 
+private
+use TestTools      TestTools-*         AtlasTest
+apply_pattern UnitTest_run unit_test=ut_METTriggerHelper
+macro_append ut_METTriggerHelper_test_dependencies " METTriggerTools METTriggerToolsMergeComponentsList "
+end_private

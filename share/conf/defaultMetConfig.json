@@ -1,0 +1,27 @@
+{
+  "type" : "met",
+  "objDefs" : [
+  {
+    "decorator" : "met",
+    "electron" : {
+      "ID"  : "MediumLH",
+      "pt"  : 10,
+      "eta" : 2.47
+    },
+    "muon" : {
+      "ID"  : "Medium",
+      "pt"  : 10,
+      "eta" : 2.7
+    },
+    "photon" : {
+      "ID"  : "Tight",
+      "pt"  : 10,
+      "eta" : 2.37
+    },
+    "tau" : {
+      "ID"  : "Medium",
+      "pt"  : 20,
+      "eta" : 2.37
+    }
+  }]
+}

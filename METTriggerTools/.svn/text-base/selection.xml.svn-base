@@ -1,0 +1,11 @@
+
+<lcgdict>
+
+      <class name="METTriggerHelper" />
+      <class name="IMETTriggerHelper" />
+
+      <class name="METTriggerEventSelector" />
+      <class name="IMETTriggerEventSelector" />
+   <class name="METTriggerAnalysisTool" />
+   <class name="IMETTriggerAnalysisTool" />
+</lcgdict>

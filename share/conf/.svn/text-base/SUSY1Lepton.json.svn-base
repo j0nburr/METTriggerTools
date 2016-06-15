@@ -1,0 +1,55 @@
+{
+  "type" : "SUSY1Lepton",
+  "objDefs" : [
+  {
+    "decorator" : "SUSY1Lepton",
+    "electron" : {
+      "ID"  : "TightLH",
+      "pt"  : 25,
+      "eta" : 2.47,
+      "iso" : "FixedCutLoose",
+      "z0sintheta" : 2,
+      "d0" : 1
+    },
+    "muon" : {
+      "ID"  : "Medium",
+      "pt"  : 25,
+      "eta" : 2.4,
+      "iso" : "FixedCutLoose"
+    },
+    "jet" : {
+      "pt"  : 25,
+      "eta" : 2.5
+    }
+  }],
+  "Electron3J" : {
+    "leptonPt" : 35,
+    "leadingJetPt" : 150,
+    "thirdJetPt" : 100,
+    "mT" : 300,
+    "meffIncl" : 1400,
+#"met" : 250,
+    "met" : 0,
+    "triggers" : ["HLT_e24_lhmedium_iloose_L1EM20VH", "HLT_e60_lhmedium"]
+  },
+  "Muon3J" : {
+    "leptonPt" : 35,
+    "leadingJetPt" : 150,
+    "thirdJetPt" : 100,
+    "mT" : 300,
+    "meffIncl" : 1400,
+#"met" : 250,
+    "met" : 0,
+    "triggers" : ["HLT_mu20_iloose_L1MU15", "HLT_mu50"]
+  },
+  "Electron5J" : {
+    "leptonPt" : 35,
+    "leadingJetPt" : 150,
+    "fifthJetPt" : 100,
+    "mT" : 250,
+    "meffIncl" : 1400,
+#"met" : 200,
+    "met" : 0,
+    "triggers" : ["HLT_mu20_iloose_L1MU15", "HLT_mu50"]
+  }
+}
